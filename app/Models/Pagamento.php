@@ -83,14 +83,14 @@ class Pagamento
             if (! $item->carro || ! $item->carro->isDisponivel()) {
                 return [
                     'sucesso' => false,
-                    'mensagem' => 'O veículo ' . ($item->carro ? $item->carro->modelo : '') . ' não está mais disponível.',
+                    'mensagem' => 'O veículo '.($item->carro ? $item->carro->modelo : '').' não está mais disponível.',
                 ];
             }
 
             if ($item->carro->quantidade_disponivel < $item->quantidade) {
                 return [
                     'sucesso' => false,
-                    'mensagem' => 'Quantidade solicitada indisponível para o veículo ' . $item->carro->modelo . '.',
+                    'mensagem' => 'Quantidade solicitada indisponível para o veículo '.$item->carro->modelo.'.',
                 ];
             }
 

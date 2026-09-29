@@ -19,7 +19,7 @@ class CarrinhoController extends Controller
             ->where('usuario_id', $usuario->id)
             ->get();
 
-        $pagamento = new Pagamento();
+        $pagamento = new Pagamento;
         $total = $pagamento->calcularTotal($itens);
 
         $simulacoes = $total > 0 ? $pagamento->simularParcelamento($total) : [];
@@ -47,7 +47,7 @@ class CarrinhoController extends Controller
         $novaQuantidade = $item ? ($item->quantidade + $quantidadeDesejada) : $quantidadeDesejada;
 
         if ($novaQuantidade > $carro->quantidade_disponivel) {
-            return back()->with('erro', 'Quantidade solicitada excede o estoque disponível (' . $carro->quantidade_disponivel . ').');
+            return back()->with('erro', 'Quantidade solicitada excede o estoque disponível ('.$carro->quantidade_disponivel.').');
         }
 
         if ($item) {
@@ -79,7 +79,7 @@ class CarrinhoController extends Controller
         $novaQuantidade = (int) $request->input('quantidade');
 
         if ($carrinho->carro && $novaQuantidade > $carrinho->carro->quantidade_disponivel) {
-            return back()->with('erro', 'Quantidade solicitada excede o estoque disponível (' . $carrinho->carro->quantidade_disponivel . ').');
+            return back()->with('erro', 'Quantidade solicitada excede o estoque disponível ('.$carrinho->carro->quantidade_disponivel.').');
         }
 
         $carrinho->quantidade = $novaQuantidade;
@@ -124,7 +124,7 @@ class CarrinhoController extends Controller
         $metodo = $request->input('metodo', 'a_vista');
         $parcelas = (int) $request->input('parcelas', 1);
 
-        $pagamento = new Pagamento();
+        $pagamento = new Pagamento;
         $resultado = $pagamento->processarPagamento($usuario, $itens, $metodo, $parcelas);
 
         if (! $resultado['sucesso']) {

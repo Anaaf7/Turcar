@@ -60,7 +60,7 @@ class CarrinhoTest extends TestCase
         $usuario = $this->criarUsuario();
         $carro = $this->criarCarro();
 
-        $response = $this->actingAs($usuario)->post('/carrinho/' . $carro->id, [
+        $response = $this->actingAs($usuario)->post('/carrinho/'.$carro->id, [
             'quantidade' => 1,
         ]);
 
@@ -110,7 +110,7 @@ class CarrinhoTest extends TestCase
             'quantidade' => 1,
         ]);
 
-        $response = $this->actingAs($usuario)->put('/carrinho/' . $item->id, [
+        $response = $this->actingAs($usuario)->put('/carrinho/'.$item->id, [
             'quantidade' => 3,
         ]);
 
@@ -132,7 +132,7 @@ class CarrinhoTest extends TestCase
             'quantidade' => 1,
         ]);
 
-        $response = $this->actingAs($usuario)->delete('/carrinho/' . $item->id);
+        $response = $this->actingAs($usuario)->delete('/carrinho/'.$item->id);
 
         $response->assertRedirect('/carrinho');
         $this->assertDatabaseMissing('carrinho', [

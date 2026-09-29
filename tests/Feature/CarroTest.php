@@ -116,7 +116,7 @@ class CarroTest extends TestCase
             'status' => 'disponivel',
         ]);
 
-        $response = $this->get('/carros/' . $carro->id);
+        $response = $this->get('/carros/'.$carro->id);
 
         $response->assertStatus(200);
         $response->assertSee('Golf');

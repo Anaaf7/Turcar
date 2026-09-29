@@ -40,7 +40,7 @@ class UsuarioTest extends TestCase
     {
         $usuario = $this->criarUsuario();
 
-        $response = $this->actingAs($usuario)->get('/usuarios/' . $usuario->id);
+        $response = $this->actingAs($usuario)->get('/usuarios/'.$usuario->id);
 
         $response->assertStatus(200);
         $response->assertSee($usuario->nome);
@@ -51,7 +51,7 @@ class UsuarioTest extends TestCase
     {
         $usuario = $this->criarUsuario();
 
-        $response = $this->actingAs($usuario)->put('/usuarios/' . $usuario->id, [
+        $response = $this->actingAs($usuario)->put('/usuarios/'.$usuario->id, [
             'nome' => 'Nome Atualizado',
             'cpf' => $usuario->cpf,
             'data_nascimento' => '1990-01-01',
@@ -63,7 +63,7 @@ class UsuarioTest extends TestCase
             'estado' => 'SP',
         ]);
 
-        $response->assertRedirect('/usuarios/' . $usuario->id);
+        $response->assertRedirect('/usuarios/'.$usuario->id);
         $this->assertDatabaseHas('usuarios', [
             'id' => $usuario->id,
             'nome' => 'Nome Atualizado',

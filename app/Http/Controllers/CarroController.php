@@ -15,11 +15,11 @@ class CarroController extends Controller
         $query = Carro::query();
 
         if ($request->filled('marca')) {
-            $query->where('marca', 'like', '%' . $request->input('marca') . '%');
+            $query->where('marca', 'like', '%'.$request->input('marca').'%');
         }
 
         if ($request->filled('modelo')) {
-            $query->where('modelo', 'like', '%' . $request->input('modelo') . '%');
+            $query->where('modelo', 'like', '%'.$request->input('modelo').'%');
         }
 
         if ($request->filled('ano')) {
@@ -66,7 +66,7 @@ class CarroController extends Controller
             'marca' => ['required', 'string', 'max:255'],
             'modelo' => ['required', 'string', 'max:255'],
             'versao' => ['required', 'string', 'max:255'],
-            'ano' => ['required', 'integer', 'min:1900', 'max:' . (date('Y') + 1)],
+            'ano' => ['required', 'integer', 'min:1900', 'max:'.(date('Y') + 1)],
             'preco' => ['required', 'numeric', 'min:0'],
             'quilometragem' => ['required', 'integer', 'min:0'],
             'cor' => ['required', 'string', 'max:50'],
@@ -86,7 +86,7 @@ class CarroController extends Controller
 
     public function show(Carro $carro): View
     {
-        $pagamento = new Pagamento();
+        $pagamento = new Pagamento;
         $simulacoes = $pagamento->simularParcelamento((float) $carro->preco);
 
         return view('carros.show', compact('carro', 'simulacoes'));
@@ -103,7 +103,7 @@ class CarroController extends Controller
             'marca' => ['required', 'string', 'max:255'],
             'modelo' => ['required', 'string', 'max:255'],
             'versao' => ['required', 'string', 'max:255'],
-            'ano' => ['required', 'integer', 'min:1900', 'max:' . (date('Y') + 1)],
+            'ano' => ['required', 'integer', 'min:1900', 'max:'.(date('Y') + 1)],
             'preco' => ['required', 'numeric', 'min:0'],
             'quilometragem' => ['required', 'integer', 'min:0'],
             'cor' => ['required', 'string', 'max:50'],
