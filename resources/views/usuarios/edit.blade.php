@@ -1,81 +1,21 @@
 @extends('layouts.app')
 
+@section('titulo', 'Editar Usuário — Turcar Concessionária')
+
 @section('conteudo')
-<h2>Editar Usuario: {{ $usuario->nome }}</h2>
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <x-section-header
+        subtitle="ATUALIZAR PERFIL"
+        :title="'Editar Usuário: ' . $usuario->nome"
+        actionText="Voltar ao Perfil"
+        :actionHref="route('usuarios.show', $usuario)" />
 
-<form action="{{ route('usuarios.update', $usuario) }}" method="POST">
-    @csrf
-    @method('PUT')
-
-    <div>
-        <label for="nome">Nome Completo:</label><br>
-        <input type="text" id="nome" name="nome" value="{{ old('nome', $usuario->nome) }}" required>
+    <div class="bg-white rounded-3xl border border-black-bean/10 shadow-xs p-8">
+        <form action="{{ route('usuarios.update', $usuario) }}" method="POST">
+            @csrf
+            @method('PUT')
+            <x-user-form :usuario="$usuario" :isEdit="true" submitLabel="Atualizar Dados" :cancelHref="route('usuarios.show', $usuario)" />
+        </form>
     </div>
-    <br>
-
-    <div>
-        <label for="cpf">CPF:</label><br>
-        <input type="text" id="cpf" name="cpf" value="{{ old('cpf', $usuario->cpf) }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="data_nascimento">Data de Nascimento (Obrigatorio maior de 18 anos):</label><br>
-        <input type="date" id="data_nascimento" name="data_nascimento" value="{{ old('data_nascimento', $usuario->data_nascimento ? $usuario->data_nascimento->format('Y-m-d') : '') }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="e_mail">E-mail:</label><br>
-        <input type="email" id="e_mail" name="e_mail" value="{{ old('e_mail', $usuario->e_mail) }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="telefone">Telefone:</label><br>
-        <input type="text" id="telefone" name="telefone" value="{{ old('telefone', $usuario->telefone) }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="endereco">Endereco:</label><br>
-        <input type="text" id="endereco" name="endereco" value="{{ old('endereco', $usuario->endereco) }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="numero">Numero:</label><br>
-        <input type="text" id="numero" name="numero" value="{{ old('numero', $usuario->numero) }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="cidade">Cidade:</label><br>
-        <input type="text" id="cidade" name="cidade" value="{{ old('cidade', $usuario->cidade) }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="estado">Estado (UF):</label><br>
-        <input type="text" id="estado" name="estado" value="{{ old('estado', $usuario->estado) }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="senha">Nova Senha (deixe em branco para manter a atual):</label><br>
-        <input type="password" id="senha" name="senha">
-    </div>
-    <br>
-
-    <div>
-        <label for="senha_confirmation">Confirmar Nova Senha:</label><br>
-        <input type="password" id="senha_confirmation" name="senha_confirmation">
-    </div>
-    <br>
-
-    <div>
-        <button type="submit">Atualizar Dados</button>
-        <a href="{{ route('usuarios.show', $usuario) }}">Cancelar</a>
-    </div>
-</form>
+</div>
 @endsection

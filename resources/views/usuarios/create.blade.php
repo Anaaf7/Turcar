@@ -1,80 +1,20 @@
 @extends('layouts.app')
 
+@section('titulo', 'Cadastrar Novo Usuário — Turcar Concessionária')
+
 @section('conteudo')
-<h2>Cadastrar Novo Usuario</h2>
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <x-section-header
+        subtitle="GESTÃO DE CLIENTES"
+        title="Cadastrar Novo Usuário"
+        actionText="Voltar para Usuários"
+        :actionHref="route('usuarios.index')" />
 
-<form action="{{ route('usuarios.store') }}" method="POST">
-    @csrf
-
-    <div>
-        <label for="nome">Nome Completo:</label><br>
-        <input type="text" id="nome" name="nome" value="{{ old('nome') }}" required>
+    <div class="bg-white rounded-3xl border border-black-bean/10 shadow-xs p-8">
+        <form action="{{ route('usuarios.store') }}" method="POST">
+            @csrf
+            <x-user-form submitLabel="Salvar Usuário" :cancelHref="route('usuarios.index')" />
+        </form>
     </div>
-    <br>
-
-    <div>
-        <label for="cpf">CPF:</label><br>
-        <input type="text" id="cpf" name="cpf" value="{{ old('cpf') }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="data_nascimento">Data de Nascimento (Obrigatorio maior de 18 anos):</label><br>
-        <input type="date" id="data_nascimento" name="data_nascimento" value="{{ old('data_nascimento') }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="e_mail">E-mail:</label><br>
-        <input type="email" id="e_mail" name="e_mail" value="{{ old('e_mail') }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="telefone">Telefone:</label><br>
-        <input type="text" id="telefone" name="telefone" value="{{ old('telefone') }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="endereco">Endereco:</label><br>
-        <input type="text" id="endereco" name="endereco" value="{{ old('endereco') }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="numero">Numero:</label><br>
-        <input type="text" id="numero" name="numero" value="{{ old('numero') }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="cidade">Cidade:</label><br>
-        <input type="text" id="cidade" name="cidade" value="{{ old('cidade') }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="estado">Estado (UF):</label><br>
-        <input type="text" id="estado" name="estado" value="{{ old('estado') }}" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="senha">Senha (minimo 8 caracteres):</label><br>
-        <input type="password" id="senha" name="senha" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="senha_confirmation">Confirmacao de Senha:</label><br>
-        <input type="password" id="senha_confirmation" name="senha_confirmation" required>
-    </div>
-    <br>
-
-    <div>
-        <button type="submit">Salvar Usuario</button>
-        <a href="{{ route('usuarios.index') }}">Cancelar</a>
-    </div>
-</form>
+</div>
 @endsection

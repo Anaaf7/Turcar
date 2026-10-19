@@ -88,7 +88,7 @@
                         </label>
                         <div class="relative">
                             <input type="text" id="marca" name="marca" value="{{ request('marca') }}"
-                                   placeholder="Ex: Toyota, Honda..."
+                                   placeholder="Digite a marca..."
                                    class="w-full rounded-lg border border-black-bean/15 bg-surface px-3 py-2 text-xs text-black-bean focus:outline-none focus:border-fire-red">
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                             Modelo
                         </label>
                         <input type="text" id="modelo" name="modelo" value="{{ request('modelo') }}"
-                               placeholder="Ex: Corolla, Civic..."
+                               placeholder="Digite o modelo..."
                                class="w-full rounded-lg border border-black-bean/15 bg-surface px-3 py-2 text-xs text-black-bean focus:outline-none focus:border-fire-red">
                     </div>
 
