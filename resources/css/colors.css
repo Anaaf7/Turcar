@@ -1,0 +1,62 @@
+/**
+ * Paleta de Cores Oficial — Turcar Concessionária
+ * Baseada em paleta de cores.jpg:
+ * - Black Bean (#280B0B)
+ * - Champagne  (#F9E7C9)
+ * - Fire Red   (#C92924)
+ */
+
+:root {
+    --hex-black-bean: #280B0B;
+    --hex-champagne: #F9E7C9;
+    --hex-fire-red: #C92924;
+}
+
+@theme {
+    /* Cores Principais da Paleta */
+    --color-black-bean: #280B0B;
+    --color-black-bean-50: #F7EFEF;
+    --color-black-bean-100: #EBDADA;
+    --color-black-bean-200: #D5B2B2;
+    --color-black-bean-300: #B88080;
+    --color-black-bean-400: #964F4F;
+    --color-black-bean-500: #732C2C;
+    --color-black-bean-600: #581C1C;
+    --color-black-bean-700: #421313;
+    --color-black-bean-800: #330E0E;
+    --color-black-bean-900: #280B0B;
+    --color-black-bean-950: #160505;
+
+    --color-champagne: #F9E7C9;
+    --color-champagne-50: #FEFAF3;
+    --color-champagne-100: #FCF3E3;
+    --color-champagne-200: #F9E7C9;
+    --color-champagne-300: #F3D39E;
+    --color-champagne-400: #EBB86B;
+    --color-champagne-500: #E19B3E;
+    --color-champagne-600: #C87D26;
+    --color-champagne-700: #A45F1E;
+    --color-champagne-800: #854B1E;
+    --color-champagne-900: #6D3E1B;
+
+    --color-fire-red: #C92924;
+    --color-fire-red-50: #FEF2F2;
+    --color-fire-red-100: #FDE3E2;
+    --color-fire-red-200: #FBCBCA;
+    --color-fire-red-300: #F7A6A4;
+    --color-fire-red-400: #F0726E;
+    --color-fire-red-500: #E44641;
+    --color-fire-red-600: #C92924;
+    --color-fire-red-700: #A91E1A;
+    --color-fire-red-800: #8C1C19;
+    --color-fire-red-900: #751D1A;
+    --color-fire-red-950: #400B09;
+
+    /* Tokens Semânticos do Design System */
+    --color-primary: #C92924;
+    --color-primary-hover: #A91E1A;
+    --color-secondary: #F9E7C9;
+    --color-dark: #280B0B;
+    --color-surface: #FDFBF7;
+    --color-surface-card: #FFFFFF;
+}

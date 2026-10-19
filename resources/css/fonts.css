@@ -1,0 +1,21 @@
+/**
+ * Fontes Locais — Turcar Concessionária
+ * 1. Outfit (Títulos, Preços, Destaques Automotivos)
+ * 2. Plus Jakarta Sans (Corpo de texto, Tabelas, Formulários)
+ */
+
+@font-face {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/Outfit-Variable.woff2') format('woff2-variations');
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 200 800;
+    font-display: swap;
+    src: url('/fonts/PlusJakartaSans-Variable.woff2') format('woff2-variations');
+}
