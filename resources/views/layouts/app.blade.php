@@ -2,54 +2,26 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Turcar Concessionaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('titulo', 'Turcar Concessionária — Encontre o Carro Perfeito')</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-    <header>
-        <h1>Turcar Concessionaria de Veiculos</h1>
-        <nav>
-            <a href="{{ route('carros.index') }}">Catalogo de Carros</a> |
-            <a href="{{ route('carrinho.index') }}">Carrinho</a> |
-            @auth
-                <a href="{{ route('carros.create') }}">Cadastrar Novo Carro</a> |
-                <a href="{{ route('usuarios.index') }}">Listar Usuarios</a> |
-                <a href="{{ route('usuarios.show', Auth::user()) }}">Meu Perfil ({{ Auth::user()->nome }})</a> |
-                <form action="{{ route('logout') }}" method="POST" style="display:inline;">
-                    @csrf
-                    <button type="submit">Sair (Logout)</button>
-                </form>
-            @else
-                <a href="{{ route('login') }}">Entrar (Login)</a> |
-                <a href="{{ route('register') }}">Cadastre-se</a>
-            @endauth
-        </nav>
-        <hr>
-    </header>
+<body class="min-h-screen flex flex-col bg-surface text-black-bean antialiased selection:bg-fire-red selection:text-white">
+    <!-- Top Information Bar (Black Bean #280B0B) -->
+    <x-topbar />
 
-    <main>
-        @if (session('sucesso'))
-            <p><strong>Sucesso:</strong> {{ session('sucesso') }}</p>
-            <hr>
-        @endif
+    <!-- Main Sticky Navigation Bar -->
+    <x-navbar />
 
-        @if (session('erro'))
-            <p><strong>Erro:</strong> {{ session('erro') }}</p>
-            <hr>
-        @endif
+    <!-- Session & Validation Alerts -->
+    <x-alert />
 
-        @if ($errors->any())
-            <div>
-                <strong>Erros de Validacao:</strong>
-                <ul>
-                    @foreach ($errors->all() as $erro)
-                        <li>{{ $erro }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            <hr>
-        @endif
-
+    <!-- Main Page Content -->
+    <main class="flex-1">
         @yield('conteudo')
     </main>
+
+    <!-- Footer (Black Bean #280B0B) -->
+    <x-footer />
 </body>
 </html>
