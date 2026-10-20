@@ -4,8 +4,10 @@
             <!-- Brand Column -->
             <div class="lg:col-span-2 space-y-4">
                 <a href="{{ route('carros.index') }}" class="inline-flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-fire-red flex items-center justify-center text-white shadow-sm">
-                        <x-icon name="gauge" class="w-5 h-5" />
+                    <div class="w-12 h-12 rounded-xl bg-champagne-100 p-1 flex items-center justify-center shadow-sm">
+                        <img src="{{ asset('imagens/Turcar Logo.svg') }}"
+                             alt="Turcar Logo"
+                             class="w-full h-full object-contain">
                     </div>
                     <div class="flex flex-col">
                         <span class="font-display font-extrabold text-2xl leading-none tracking-tight text-white">
@@ -20,14 +22,14 @@
                     Sua próxima jornada começa aqui. Veículos selecionados com rigoroso padrão de qualidade, garantia de procedência e financiamento em até 60x.
                 </p>
                 <div class="flex items-center gap-3 pt-1">
-                    <a href="{{ route('carros.index') }}" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-fire-red text-champagne hover:text-white flex items-center justify-center transition-colors">
-                        <x-icon name="instagram" class="w-4 h-4" />
+                    <a href="{{ route('carros.index') }}" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-fire-red text-champagne hover:text-white flex items-center justify-center transition-colors" title="Compartilhar">
+                        <x-icon name="share-2" class="w-4 h-4" />
                     </a>
-                    <a href="{{ route('carros.index') }}" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-fire-red text-champagne hover:text-white flex items-center justify-center transition-colors">
-                        <x-icon name="facebook" class="w-4 h-4" />
+                    <a href="{{ route('carros.index') }}" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-fire-red text-champagne hover:text-white flex items-center justify-center transition-colors" title="Site Oficial">
+                        <x-icon name="globe" class="w-4 h-4" />
                     </a>
-                    <a href="{{ route('carros.index') }}" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-fire-red text-champagne hover:text-white flex items-center justify-center transition-colors">
-                        <x-icon name="youtube" class="w-4 h-4" />
+                    <a href="{{ route('carros.index') }}" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-fire-red text-champagne hover:text-white flex items-center justify-center transition-colors" title="Showroom em Vídeo">
+                        <x-icon name="tv" class="w-4 h-4" />
                     </a>
                 </div>
             </div>

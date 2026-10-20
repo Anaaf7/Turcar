@@ -13,9 +13,11 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black-bean via-black-bean/85 to-black-bean/60"></div>
 
             <div class="relative z-10">
-                <div class="inline-flex items-center gap-2.5">
-                    <div class="w-9 h-9 rounded-xl bg-fire-red flex items-center justify-center text-white">
-                        <x-icon name="gauge" class="w-5 h-5" />
+                <div class="inline-flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-xl bg-champagne-100 p-1 flex items-center justify-center">
+                        <img src="{{ asset('imagens/Turcar Logo.svg') }}"
+                             alt="Turcar Logo"
+                             class="w-full h-full object-contain">
                     </div>
                     <span class="font-display font-extrabold text-xl tracking-tight">
                         Tur<span class="text-fire-red">Car</span>

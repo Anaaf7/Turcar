@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('titulo', 'Turcar Concessionária — Encontre o Carro Perfeito')</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('imagens/Turcar Logo.svg') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="min-h-screen flex flex-col bg-surface text-black-bean antialiased selection:bg-fire-red selection:text-white">

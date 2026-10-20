@@ -7,11 +7,11 @@
 <header x-data="{ mobileOpen: false, userDropdown: false }" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-black-bean/10 shadow-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
-            <!-- Brand Logo (DriveX style from interface.jpg adapted for Turcar) -->
+            <!-- Brand Logo (Official Turcar Logo.svg) -->
             <a href="{{ route('carros.index') }}" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-black-bean flex items-center justify-center text-fire-red shadow-sm group-hover:bg-fire-red group-hover:text-white transition-colors">
-                    <x-icon name="gauge" class="w-6 h-6" />
-                </div>
+                <img src="{{ asset('imagens/Turcar Logo.svg') }}"
+                     alt="Turcar Logo"
+                     class="h-14 w-auto object-contain group-hover:scale-105 transition-transform">
                 <div class="flex flex-col">
                     <span class="font-display font-extrabold text-2xl leading-none tracking-tight text-black-bean">
                         Tur<span class="text-fire-red">Car</span>

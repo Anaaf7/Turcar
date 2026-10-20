@@ -11,10 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initLucideIcons();
 });
 
-document.addEventListener('alpine:initialized', () => {
-    initLucideIcons();
-});
-
 window.refreshIcons = initLucideIcons;
 
 Alpine.start();

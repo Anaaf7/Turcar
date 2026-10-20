@@ -200,7 +200,7 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-black-bean/10 bg-white rounded-2xl border border-black-bean/10 p-4 shadow-2xs">
             <x-feature-card
-                icon="shield-dollar"
+                icon="badge-dollar-sign"
                 title="Melhor Preço Garantido"
                 description="Ofertas competitivas e avaliação justa do seu seminovo." />
             <x-feature-card
